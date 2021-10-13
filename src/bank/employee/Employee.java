@@ -1,10 +1,9 @@
 package bank.employee;
 
 import bank.currency.Currency;
-import exceptions.InvalidHumanData;
+import exception.InvalidHumanDataException;
 import human.Human;
 import print.Printable;
-
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -15,7 +14,7 @@ public class Employee extends Human implements Printable {
     private Currency salary;
     private String position;
 
-    public Employee(String firstName, String lastName, LocalDateTime birthDay, String position, Currency salary) throws InvalidHumanData {
+    public Employee(String firstName, String lastName, LocalDateTime birthDay, String position, Currency salary) throws InvalidHumanDataException {
         super(firstName, lastName, birthDay);
         this.position = position;
         this.salary = salary;

@@ -1,8 +1,7 @@
 package bank.currency;
 
-import exceptions.InvalidCurrencyType;
+import exception.InvalidCurrencyTypeException;
 import print.Printable;
-
 import java.util.Objects;
 
 public class Currency implements Printable {
@@ -20,7 +19,7 @@ public class Currency implements Printable {
             this.amount = moneyAmount;
             this.type = moneyType;
         } else {
-            throw new InvalidCurrencyType("Runtime Exception: Invalid Currency Type.");
+            throw new InvalidCurrencyTypeException("Runtime Exception: Invalid Currency Type.");
         }
     }
 
@@ -36,7 +35,7 @@ public class Currency implements Printable {
         if (moneyType.equals("USD") || moneyType.equals("EUR") || moneyType.equals("RUB") || moneyType.equals("BYN")) {
             this.type = moneyType;
         } else {
-            throw new InvalidCurrencyType("Runtime Exception: Invalid Currency Type.");
+            throw new InvalidCurrencyTypeException("Runtime Exception: Invalid Currency Type.");
         }
     }
 

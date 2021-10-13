@@ -1,7 +1,6 @@
 package address;
 
 import print.Printable;
-
 import java.util.Objects;
 
 public class Address implements Printable {

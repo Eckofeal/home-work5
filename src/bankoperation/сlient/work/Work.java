@@ -1,7 +1,6 @@
-package bankoperations.сlient.work;
+package bankoperation.сlient.work;
 
 import print.Printable;
-
 import java.util.Objects;
 
 public class Work implements Printable {

@@ -1,8 +1,7 @@
 package human;
 
-import exceptions.InvalidHumanData;
+import exception.InvalidHumanDataException;
 import print.Printable;
-
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
@@ -14,10 +13,10 @@ public class Human implements Printable {
     private int age;
     private LocalDateTime birthday;
 
-    public Human(String firstName, String lastName, LocalDateTime birthday) throws InvalidHumanData {
+    public Human(String firstName, String lastName, LocalDateTime birthday) throws InvalidHumanDataException {
         int age = (int) ChronoUnit.YEARS.between(birthday, LocalDateTime.now());
         if (firstName.equals("") || lastName.equals("") || age < 0 || age > 150) {
-            throw new InvalidHumanData("Exception: InvalidHumanData.");
+            throw new InvalidHumanDataException("Exception: InvalidHumanData.");
         }
         this.firstName = firstName;
         this.lastName = lastName;
@@ -25,9 +24,9 @@ public class Human implements Printable {
         this.age = age;
     }
 
-    public void setFirstName(String firstName) throws InvalidHumanData {
+    public void setFirstName(String firstName) throws InvalidHumanDataException {
         if (firstName.equals("")) {
-            throw new InvalidHumanData("Exception: InvalidHumanData.");
+            throw new InvalidHumanDataException("Exception: InvalidHumanData.");
         }
         this.firstName = firstName;
     }
@@ -36,9 +35,9 @@ public class Human implements Printable {
         return firstName;
     }
 
-    public void setLastName(String lastName) throws InvalidHumanData {
+    public void setLastName(String lastName) throws InvalidHumanDataException {
         if (lastName.equals("")) {
-            throw new InvalidHumanData("Exception: InvalidHumanData");
+            throw new InvalidHumanDataException("Exception: InvalidHumanData");
         }
         this.lastName = lastName;
     }
@@ -47,9 +46,9 @@ public class Human implements Printable {
         return lastName;
     }
 
-    public void setAge(int age) throws InvalidHumanData {
+    public void setAge(int age) throws InvalidHumanDataException {
         if (age < 0 || age > 150) {
-            throw new InvalidHumanData("Exception: InvalidHumanData");
+            throw new InvalidHumanDataException("Exception: InvalidHumanData");
         }
         this.age = age;
     }

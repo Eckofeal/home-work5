@@ -1,4 +1,4 @@
-package bankoperations;
+package bankoperation;
 
 import address.Address;
 import bank.currency.Currency;

@@ -3,11 +3,10 @@ package bank;
 import address.Address;
 import bank.currency.Currency;
 import bank.organization.TaxPayable;
-import bankoperations.BankOperation;
-import bankoperations.Credit;
-import bankoperations.CreditType;
+import bankoperation.BankOperation;
+import bankoperation.Credit;
+import bankoperation.CreditType;
 import human.Human;
-
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Objects;

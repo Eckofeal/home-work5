@@ -2,17 +2,16 @@ import address.Address;
 import bank.*;
 import bank.currency.Currency;
 import bank.organization.TaxPayable;
-import bankoperations.*;
-import bankoperations.сlient.Client;
-import bankoperations.сlient.work.Work;
-import exceptions.InvalidClientAge;
-import exceptions.InvalidCurrencyType;
-import exceptions.InvalidHumanData;
+import bankoperation.*;
+import bankoperation.сlient.Client;
+import bankoperation.сlient.work.Work;
+import exception.InvalidClientAgeException;
+import exception.InvalidCurrencyTypeException;
+import exception.InvalidHumanDataException;
 import human.Human;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import print.Printable;
-
 import java.time.LocalDateTime;
 import java.time.Month;
 
@@ -123,9 +122,9 @@ public class MainClass {
             //if client less than 18 years old, or more than 100 (calculations are in "year" parameter), program will throw InvalidClientAge exception ( unchecked runtime exception ).
             //if client less than 0 years old, or more than 150 (calculations are in "year" parameter), program will throw InvalidHumanData exception ( checked exception ).
             client3 = new Client("Tom", "Fox", LocalDateTime.of(2024, Month.NOVEMBER, 7, 3, 41), work3);
-        } catch (InvalidHumanData exception) {
+        } catch (InvalidHumanDataException exception) {
             LOGGER.error(exception.getMessage());
-        } catch (InvalidClientAge exception) {
+        } catch (InvalidClientAgeException exception) {
             LOGGER.error(exception.getMessage());
         } finally {
             if (client1 != null) {
@@ -200,9 +199,9 @@ public class MainClass {
             client4 = new Client("Bill", "Milligan", LocalDateTime.of(1991, Month.DECEMBER, 1, 12, 44), work4);
             client5 = new Client("Alisha", "Willis", LocalDateTime.of(1989, Month.FEBRUARY, 23, 16, 11), work5);
             client6 = new Client("Richard", "Forester", LocalDateTime.of(1977, Month.AUGUST, 29, 4, 3), work6);
-        } catch (InvalidHumanData exception) {
+        } catch (InvalidHumanDataException exception) {
             LOGGER.error(exception.getMessage());
-        } catch (InvalidClientAge exception) {
+        } catch (InvalidClientAgeException exception) {
             LOGGER.error(exception.getMessage());
         } finally {
             if (client4 != null) {
@@ -231,7 +230,7 @@ public class MainClass {
         Human human1 = null;
         try {
             human1 = new Human(client5.getFirstName(), client5.getLastName(), client5.getBirthday());
-        } catch (InvalidHumanData exception) {
+        } catch (InvalidHumanDataException exception) {
             LOGGER.error(exception.getMessage());
         } finally {
             if (human1 != null) {
@@ -259,9 +258,9 @@ public class MainClass {
         Client client7 = null;
         try {
             client7 = new Client("Mick", "Flick", LocalDateTime.of(2001, Month.JANUARY, 14, 1, 15), work7);
-        } catch (InvalidHumanData exception) {
+        } catch (InvalidHumanDataException exception) {
             LOGGER.error(exception.getMessage());
-        } catch (InvalidClientAge exception) {
+        } catch (InvalidClientAgeException exception) {
             LOGGER.error(exception.getMessage());
         } finally {
             if (client7 != null) {
@@ -286,7 +285,7 @@ public class MainClass {
         Human human2 = null;
         try {
             human2 = new Human(client7.getFirstName(), client7.getLastName(), client7.getBirthday());
-        } catch (InvalidHumanData exception) {
+        } catch (InvalidHumanDataException exception) {
             LOGGER.error(exception.getMessage());
         } finally {
             if (human2 != null) {
@@ -329,9 +328,9 @@ public class MainClass {
         Client client8 = null;
         try {
             client8 = new Client("Felix", "Irvin", LocalDateTime.of(2003, Month.FEBRUARY, 12, 14, 43), work8);
-        } catch (InvalidHumanData exception) {
+        } catch (InvalidHumanDataException exception) {
             LOGGER.error(exception.getMessage());
-        } catch (InvalidClientAge exception) {
+        } catch (InvalidClientAgeException exception) {
             LOGGER.error(exception.getMessage());
         } finally {
             if (client8 != null) {
@@ -351,7 +350,7 @@ public class MainClass {
         System.out.println("\n\n/////////////////////////////////TWELFTH////////////////////////////\n\n");
         try {
             invalidCurrency = new Currency(100, "ABVGD");
-        } catch (InvalidCurrencyType exception) {
+        } catch (InvalidCurrencyTypeException exception) {
             LOGGER.error(exception.getMessage());
         } finally {
             if (invalidCurrency != null) {
@@ -376,7 +375,7 @@ public class MainClass {
             //if client less than 18 years old, or more than 100 (calculations are in "year" parameter), program will throw InvalidClientAge exception ( unchecked runtime exception ).
             //if client less than 0 years old, or more than 150 (calculations are in "year" parameter), program will throw InvalidHumanData exception ( checked exception ).
             client9 = new Client("Kira", "Flow", LocalDateTime.of(2005, Month.APRIL, 3, 16, 27), work9);
-        } catch (InvalidHumanData exception) {
+        } catch (InvalidHumanDataException exception) {
             LOGGER.error(exception.getMessage());
         }
         //We can throw InvalidClientAge exceptions, but not catch them at compile time, because its RuntimeException.

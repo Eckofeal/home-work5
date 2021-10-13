@@ -1,6 +1,6 @@
 package bank;
 
-import bankoperations.BankOperation;
+import bankoperation.BankOperation;
 import human.Human;
 
 public interface Findable {

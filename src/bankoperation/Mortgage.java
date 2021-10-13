@@ -1,6 +1,6 @@
-package bankoperations;
+package bankoperation;
 
-import bankoperations.сlient.Client;
+import bankoperation.сlient.Client;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Objects;

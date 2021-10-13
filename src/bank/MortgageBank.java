@@ -2,9 +2,9 @@ package bank;
 
 import address.Address;
 import bank.currency.Currency;
-import bankoperations.BankOperation;
+import bankoperation.BankOperation;
 import human.Human;
-import bankoperations.Mortgage;
+import bankoperation.Mortgage;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Objects;

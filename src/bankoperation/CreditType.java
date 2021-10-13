@@ -1,7 +1,6 @@
-package bankoperations;
+package bankoperation;
 
 import print.Printable;
-
 import java.util.Objects;
 
 public class CreditType implements Printable {

@@ -1,10 +1,9 @@
-package bankoperations.сlient;
+package bankoperation.сlient;
 
-import exceptions.InvalidClientAge;
-import exceptions.InvalidHumanData;
+import exception.InvalidClientAgeException;
+import exception.InvalidHumanDataException;
 import human.Human;
-import bankoperations.сlient.work.Work;
-
+import bankoperation.сlient.work.Work;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -14,10 +13,10 @@ public class Client extends Human {
 
     private Work work;
 
-    public Client(String firstName, String lastName, LocalDateTime birthDay, Work work) throws InvalidHumanData {
+    public Client(String firstName, String lastName, LocalDateTime birthDay, Work work) throws InvalidHumanDataException {
         super(firstName, lastName, birthDay);
         if (super.getAge() < 18 || super.getAge() > 100) {
-            throw new InvalidClientAge("Runtime Exception: Ivalid Client Age.");
+            throw new InvalidClientAgeException("Runtime Exception: Ivalid Client Age.");
         }
         this.work = work;
         count++;

@@ -4,10 +4,9 @@ import address.Address;
 import bank.employee.Employee;
 import bank.organization.Organization;
 import bank.organization.TaxPayable;
-import bankoperations.сlient.Client;
-import bankoperations.*;
+import bankoperation.сlient.Client;
+import bankoperation.*;
 import human.Human;
-
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Objects;

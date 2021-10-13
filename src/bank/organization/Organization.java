@@ -2,7 +2,6 @@ package bank.organization;
 
 import address.Address;
 import print.Printable;
-
 import java.time.LocalDateTime;
 import java.util.Objects;
 

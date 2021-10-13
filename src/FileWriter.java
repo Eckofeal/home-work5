@@ -1,6 +1,5 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -10,12 +9,13 @@ public class FileWriter implements AutoCloseable {
     File file;
     FileOutputStream fileOutputStream;
     private static final Logger LOGGER;
+
     static {
         LOGGER = LogManager.getLogger(FileWriter.class);
     }
 
     public FileWriter() {
-        file = new File("./src/", "1.txt" );
+        file = new File("./src/", "1.txt");
         try {
             file.createNewFile();
             fileOutputStream = new FileOutputStream(file, true);
@@ -37,11 +37,12 @@ public class FileWriter implements AutoCloseable {
 
     @Override
     public void close() {
-            try {
-                fileOutputStream.close();
-                LOGGER.info("File closed.");
-            } catch (IOException exception) {
-                LOGGER.error(exception.getMessage());;
-            }
+        try {
+            fileOutputStream.close();
+            LOGGER.info("File closed.");
+        } catch (IOException exception) {
+            LOGGER.error(exception.getMessage());
+        }
     }
+
 }
